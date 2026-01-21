@@ -3,8 +3,10 @@
 用於在開發環境中測試 Flask 後端
 """
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # 允許跨域請求
 
 @app.route('/api/hello', methods=['GET'])
 def hello_world():
